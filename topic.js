@@ -16,6 +16,7 @@ async function run() {
         console.log('connected');
         await admin.createTopics({
             'topics' : [{
+                // creating topic users to publish user 
                 'topic' : 'users',
                 'numPartitions' : 2
             }]
