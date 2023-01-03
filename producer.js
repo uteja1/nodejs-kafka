@@ -25,11 +25,11 @@ async function run() {
         */
         const partition = msg[0] < 'N' ? 0 : 1;
         const result = await producer.send({
-            'topic' : 'users',
+            'topic' : 'users', // send message to this topic
             'messages' : [
                 {
-                    'value' : msg,
-                    'partition': partition
+                    'value' : msg,  // actual data sent to kafka broker partition
+                    'partition': partition // message to be sent partition of the topic defined 
                 }
             ]
         });

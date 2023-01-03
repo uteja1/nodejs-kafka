@@ -21,14 +21,14 @@ async function run() {
             consume messeges from topic 'users'
        */
         consumer.subscribe({
-            'fromBeginning' : true,
-            'topic' : 'users'
+            'fromBeginning' : true, // read from beginning position in the topic
+            'topic' : 'users'       // subscribe to this topic in kafka broker.
         });
 
         /*
             Performing operations on the messege got from the topic.
             Here, I am printing the messege.
-            This task will be scanning each 
+            This task will be scanning for new messages from the topic
         */
         await consumer.run({
             "eachMessage" : async result => {
