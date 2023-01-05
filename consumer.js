@@ -32,7 +32,7 @@ async function run() {
         */
         await consumer.run({
             "eachMessage" : async result => {
-                console.log(`recieved message ====> ${JSON.stringify(result)}`)
+                console.log(`recieved message ====> ${result.message.value} on partition ===>${result.partition}`);
             }
         });
 
